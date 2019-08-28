@@ -6,21 +6,23 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/08/28 09:16:17 by odooms           ###   ########.fr       */
+/*   Updated: 2019/08/28 09:57:08 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "push_swap.h"
 
-struct node
-{
-	int		data;
-	struct node *next;
-};
+//#include <stdio.h>
+///#include <stdlib.h>
 
-struct node *head = NULL;
-struct node *current = NULL;
+//struct node
+//{
+//	int		data;
+//	struct node *next;
+//};
+
+//struct node *head = NULL;
+//struct node *current = NULL;
 
 void	makelist()
 {
