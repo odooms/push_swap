@@ -6,23 +6,23 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/08/28 12:31:07 by odooms           ###   ########.fr       */
+/*   Updated: 2019/08/28 13:10:12 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
 void	makelist()
 {
 	struct node *ptr = head;
 	while (ptr != NULL)
 	{
-		printf("%d\n", ptr->data);
+		ft_putnbr(ptr->data);
+		ft_putchar('\n');
 		ptr = ptr->next;
 	}
-	printf("- -\n");
-	printf("a b\n");
+	ft_putstr("- -\n");
+	ft_putstr("a b\n");
 }
 
 void	insert(int data)
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	int m;
 	while (argc - 1 >= 1)
 	{
-		m = atoi(argv[argc - 1]);
+		m = ft_atoi(argv[argc - 1]);
 		insert(m);
 		argc--;
 	}
