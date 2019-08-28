@@ -6,23 +6,12 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/08/28 09:57:08 by odooms           ###   ########.fr       */
+/*   Updated: 2019/08/28 12:31:07 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//#include <stdio.h>
-///#include <stdlib.h>
-
-//struct node
-//{
-//	int		data;
-//	struct node *next;
-//};
-
-//struct node *head = NULL;
-//struct node *current = NULL;
+#include <unistd.h>
 
 void	makelist()
 {
@@ -44,15 +33,15 @@ void	insert(int data)
 	head = link;
 }
 
-int main()
+int main(int argc, char **argv)
 {
-	insert(1);
-	insert(2);
-	insert(3);
-	insert(6);
-	insert(7);
-	insert(4);
-	insert(5);
+	int m;
+	while (argc - 1 >= 1)
+	{
+		m = atoi(argv[argc - 1]);
+		insert(m);
+		argc--;
+	}
 	makelist();
 	return (0);
 }
