@@ -6,7 +6,7 @@
 #    By: odooms <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/28 13:19:03 by odooms            #+#    #+#              #
-#    Updated: 2019/08/28 13:55:17 by odooms           ###   ########.fr        #
+#    Updated: 2019/08/30 14:24:46 by odooms           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ OBJ = push_swap.o
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(SRC) $(HD) $(LIB)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	$(CC) $(CFLAGS) $(SRC) $(HD) $(LIB)
+//	ar rc $(NAME) $(OBJ)
+//	ranlib $(NAME)
 
 re: fclean all
 
