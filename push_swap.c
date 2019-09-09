@@ -6,25 +6,25 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/05 09:37:08 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/09 15:39:09 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	makelist(struct node *s_b, struct node *s_a)
+void	makelist(struct s_list *B, struct s_list *A)
 {
-	struct node *ptr = s_a;
+	struct s_list *ptr = A;
 	
 	while (ptr != NULL)
 	{
 		ft_putnbr(ptr->data);
-		if (s_b != NULL)
+		if (B != NULL)
 		{
 			ft_putchar(' ');
-			ft_putnbr(s_b->data);
-			s_b = s_b->next;
+			ft_putnbr(B->data);
+			B = B->next;
 		}
 		else
 		{
@@ -37,35 +37,35 @@ void	makelist(struct node *s_b, struct node *s_a)
 	ft_putstr("a b\n");
 }
 
-void	stack_a(struct node **s_a, int data)
+void	prepend(struct s_list **A, int data)
 {
-	struct node *link_a = (struct node*)malloc(sizeof(struct node));
+	struct s_list *link_a = (struct s_list*)malloc(sizeof(struct s_list));
 	link_a->data = data;
-	link_a->next = *s_a;
-	*s_a = link_a;
+	link_a->next = *A;
+	*A = link_a;
 }
 
-void	stack_b(struct node **s_b, int data)
+/*void	stack_b(struct node **s_b, int data)
 {
 	struct node *link_b = (struct node*)malloc(sizeof(struct node));
 	link_b->data = data;
 	link_b->next = *s_b;
 	*s_b = link_b;
-}
+}*/
 
 int main(int argc, char **argv)
 {
 	int m;
-	struct node *s_b = NULL;
-	struct node *s_a = NULL;
+	struct s_list *B = NULL;
+	struct s_list *A = NULL;
 	while (argc - 1 >= 1)
 	{
 		m = ft_atoi(argv[argc - 1]);
-		stack_a(&s_a, m);
+		prepend(&A, m);
 		argc--;
 	}
-	stack_b(&s_b, 3);
-	stack_b(&s_b, 5);
-	makelist(s_b, s_a);
+	prepend(&B, 3);
+	prepend(&B, 5);
+	makelist(B, A);
 	return (0);
 }
