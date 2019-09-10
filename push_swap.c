@@ -6,7 +6,7 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/09 15:39:09 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/10 14:37:02 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,33 @@ void	prepend(struct s_list **A, int data)
 	*A = link_a;
 }
 
-/*void	stack_b(struct node **s_b, int data)
+struct s_list	remove_bottom(struct s_list *bottom)
 {
-	struct node *link_b = (struct node*)malloc(sizeof(struct node));
-	link_b->data = data;
-	link_b->next = *s_b;
-	*s_b = link_b;
-}*/
+	struct s_list *move = bottom;
+	struct s_list *back = NULL;
+	while (move->next != NULL)
+	{
+		back = move;
+		move = move->next;
+	}
+	if (back != NULL)
+		back->next = NULL;
+	if (move == bottom)
+		bottom = NULL;
+	free(move);
+	return (*bottom);
+}
+
+struct s_list	remove_top(struct s_list *top)
+{
+	struct s_list *move = top;
+	top = top->next;
+	move->next = top;
+	if (move == top)
+		top = NULL;
+	free(move);
+	return (*top);
+}
 
 int main(int argc, char **argv)
 {
@@ -64,8 +84,10 @@ int main(int argc, char **argv)
 		prepend(&A, m);
 		argc--;
 	}
-	prepend(&B, 3);
-	prepend(&B, 5);
+	remove_top(A);
+//	remove_bottom(A);
+//	prepend(&B, 3);
+	//prepend(&B, 5);
 	makelist(B, A);
 	return (0);
 }
