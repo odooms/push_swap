@@ -6,7 +6,7 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/13 13:51:12 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/13 16:25:59 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	makelist(struct s_list *B, struct s_list *A)
 	ft_putstr("a b\n");
 }
 
-
 void	prepend(struct s_list **A, int data)
 {
 	struct s_list *link_a = (struct s_list*)malloc(sizeof(struct s_list));
@@ -45,7 +44,6 @@ void	prepend(struct s_list **A, int data)
 	link_a->next = *A;
 	*A = link_a;
 }
-
 
 void	append(struct s_list** end, int num)
 {
@@ -64,10 +62,11 @@ void	append(struct s_list** end, int num)
 	return ;
 }
 
-struct s_list	remove_bottom(struct s_list *bottom)
+int remove_bottom(struct s_list *bottom)
 {
 	struct s_list *move = bottom;
 	struct s_list *back = NULL;
+	int result;
 	while (move->next != NULL)
 	{
 		back = move;
@@ -75,10 +74,12 @@ struct s_list	remove_bottom(struct s_list *bottom)
 	}
 	if (back != NULL)
 		back->next = NULL;
+	result = back->data;
 	if (move == bottom)
 		bottom = NULL;
 	free(move);
-	return (*bottom);
+	return (result);
+	//return (*bottom);
 }
 
 int	remove_top(struct s_list** head)
@@ -101,11 +102,29 @@ int main(int argc, char **argv)
 		prepend(&A, m);
 		argc--;
 	}
-	pa();
+	/*-------swap--A-----
+	int temp = remove_top(&A);
+	int x = remove_top(&A);
+	prepend(&A, temp);
+	prepend(&A, x);*/
+
+	/*-------push-to-B----
+	int temp = remove_top(&A);
+	prepend(&B, temp);*/
+
+	/*---rotate--A------
+	int temp = remove_top(&A);
+	append(&A, temp);*/
+
+	/*---reverse--rotate--A-*/
+	int temp = remove_bottom(A);
+	prepend(&A, temp);
+//	pa();
 	makelist(B, A);
-	perpend(B, 4);
-	perpend(B, 7);
-	peroend(B, 2);
+//	perpend(B, 4);
+//	perpend(B, 7);
+//	perpend(B, 2);
 //	sleep(1000);
 	return (0);
 }
+
