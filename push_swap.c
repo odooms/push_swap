@@ -6,7 +6,7 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/10 14:37:02 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/13 13:51:12 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,31 @@ void	makelist(struct s_list *B, struct s_list *A)
 	ft_putstr("a b\n");
 }
 
+
 void	prepend(struct s_list **A, int data)
 {
 	struct s_list *link_a = (struct s_list*)malloc(sizeof(struct s_list));
 	link_a->data = data;
 	link_a->next = *A;
 	*A = link_a;
+}
+
+
+void	append(struct s_list** end, int num)
+{
+	struct s_list* tmp = (struct s_list*)malloc(sizeof(struct s_list));
+	struct s_list *last = *end;
+	tmp->data = num;
+	tmp->next = NULL;
+	if (*end == NULL)
+	{
+		end = &tmp;
+		return ;
+	}
+	while (last->next != NULL)
+	last = last->next;
+	last->next = tmp;
+	return ;
 }
 
 struct s_list	remove_bottom(struct s_list *bottom)
@@ -62,15 +81,13 @@ struct s_list	remove_bottom(struct s_list *bottom)
 	return (*bottom);
 }
 
-struct s_list	remove_top(struct s_list *top)
+int	remove_top(struct s_list** head)
 {
-	struct s_list *move = top;
-	top = top->next;
-	move->next = top;
-	if (move == top)
-		top = NULL;
-	free(move);
-	return (*top);
+	struct s_list* tmp = *head;
+	int result = tmp->data;
+	(*head) = (*head)->next;
+	free(tmp);
+	return (result);
 }
 
 int main(int argc, char **argv)
@@ -84,10 +101,11 @@ int main(int argc, char **argv)
 		prepend(&A, m);
 		argc--;
 	}
-	remove_top(A);
-//	remove_bottom(A);
-//	prepend(&B, 3);
-	//prepend(&B, 5);
+	pa();
 	makelist(B, A);
+	perpend(B, 4);
+	perpend(B, 7);
+	peroend(B, 2);
+//	sleep(1000);
 	return (0);
 }
