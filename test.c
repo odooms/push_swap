@@ -6,23 +6,11 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 08:57:32 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/16 15:15:02 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/18 11:46:57 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*void	swap_A(struct s_list *A)
-{
-//	struct s_list *A = NULL;
-	int temp_1;
-	int temp_2;
-	temp_1 = remove_top(&A);
-	temp_2 = remove_top(&A);
-	prepend(&A, temp_1);
-	prepend(&A, temp_2);
-	write(1, "sa\n", 3);
-}*/
 
 int main(int argc, char **argv)
 {
@@ -36,10 +24,12 @@ int main(int argc, char **argv)
 		prepend(&A, m);
 		argc--;
 	}
-	prepend(&B, 8);
-	prepend(&B, 7);
-	prepend(&B, 9);
+	prepend(&B, 1);
+	prepend(&B, 2);
+	prepend(&B, 3);
 	swap_A(A);
+//	rotate_A(A);
+//	push_A(B);	
 	makelist(B, A);
 	return (0);
 }
