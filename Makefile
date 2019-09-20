@@ -6,14 +6,14 @@
 #    By: odooms <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/28 13:19:03 by odooms            #+#    #+#              #
-#    Updated: 2019/09/13 14:55:53 by odooms           ###   ########.fr        #
+#    Updated: 2019/09/20 13:09:49 by odooms           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = SORT.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRC = push_swap.c test.c
+SRC = push_swap.c test.c makelist.c
 HD = push_swap.h
 LIB = -I libft/libft.a
 OBJ = push_swap.o test.o

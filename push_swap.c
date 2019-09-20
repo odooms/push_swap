@@ -6,7 +6,7 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/19 13:50:06 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/20 13:44:10 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,13 @@ void	append(struct s_list** end, int num)
 	while (last->next != NULL)
 	last = last->next;
 	last->next = tmp;
-	return ;
 }
 
 int remove_bottom(struct s_list *bottom)
 {
+	int result;
 	struct s_list *move = bottom;
 	struct s_list *back = NULL;
-	int result;
 	while (move->next != NULL)
 	{
 		back = move;
@@ -59,10 +58,30 @@ int remove_bottom(struct s_list *bottom)
 
 int	remove_top(struct s_list** top)
 {
+	if (*top == NULL)
+		return (0);
 	struct s_list* tmp = *top;
 	int result = tmp->data;
 	(*top) = (*top)->next;
+	if (tmp == *top)
+		top = NULL;
 	free(tmp);
 	return (result);
 }
+
+/*struct s_list	reverse(struct s_list *top)
+{
+	struct s_list	*prev = NULL;
+	struct s_list	*move = top;
+	struct s_list	*next;
+	while (move	!= NULL)
+	{
+		next = move->next;
+		move->next = prev;
+		prev = move;
+		move = next;
+	}
+	top = prev;
+	return (head);
+}*/
 
