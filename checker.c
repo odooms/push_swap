@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 11:11:29 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/23 13:52:43 by odooms           ###   ########.fr       */
+/*   Created: 2019/09/23 10:56:28 by odooms            #+#    #+#             */
+/*   Updated: 2019/09/23 14:16:30 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_A(struct s_list **A)
+void	checker(struct s_list *A, struct s_list *B)
 {
-	int temp_1;
-	int temp_2;
-	temp_1 = remove_top(&(*A));
-	temp_2 = remove_top(&(*A));
-	prepend(&(*A), temp_1);
-	prepend(&(*A), temp_2);
+	struct s_list *i = A;
+	struct s_list *j;
+	int temp;
+	while (i->next != NULL)
+	{
+		j = i->next;
+		while(j != NULL)
+		{
+			if(i->data > j->data)
+			{
+				temp = i->data;
+				i->data = j->data;
+				j->data = temp;
+			}
+			j = j->next;
+		}
+		i = i->next;
+	}
+	makelist(B, A);
+	write(1, "OK\n", 3);
 }
-
-void	swap_B(struct s_list **B)
-{
-	int temp_1;
-	int temp_2;
-	temp_1 = remove_top(&(*B));
-	temp_2 = remove_top(&(*B));
-	prepend(&(*B), temp_1);
-	prepend(&(*B), temp_2);
-}
-
-void swap_A_B(struct s_list **A, struct s_list **B)
-{
-	swap_A(&(*A));
-	swap_B(&(*B));
-}
-

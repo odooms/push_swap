@@ -6,7 +6,7 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 09:43:37 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/20 15:33:40 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/23 14:32:54 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	s_list
 }t_list;
 
 void	makelist(struct s_list *B, struct s_list *A);
-struct s_list	create(int data, struct s_list* next);
+void	compare_result(struct s_list *A, struct s_list *B);
 void	prepend(struct s_list **A, int data);
 void	append(struct s_list** end, int data);
 int 	remove_top(struct s_list** top);

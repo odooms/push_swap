@@ -6,7 +6,7 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 08:57:32 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/20 15:33:17 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/23 11:42:14 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 	//	prepend(&B, m);
 		argc--;
 	}
-	makelist(B, A);
+//	makelist(B, A);
+	checker(A, B);
 	return (0);
 }
