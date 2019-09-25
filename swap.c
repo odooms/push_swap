@@ -6,13 +6,13 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 11:11:29 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/23 13:52:43 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/25 14:34:15 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_A(struct s_list **A)
+void	swap_A(t_list **A)
 {
 	int temp_1;
 	int temp_2;
@@ -22,7 +22,7 @@ void	swap_A(struct s_list **A)
 	prepend(&(*A), temp_2);
 }
 
-void	swap_B(struct s_list **B)
+void	swap_B(t_list **B)
 {
 	int temp_1;
 	int temp_2;
@@ -32,7 +32,7 @@ void	swap_B(struct s_list **B)
 	prepend(&(*B), temp_2);
 }
 
-void swap_A_B(struct s_list **A, struct s_list **B)
+void swap_A_B(t_list **A, t_list **B)
 {
 	swap_A(&(*A));
 	swap_B(&(*B));

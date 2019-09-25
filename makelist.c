@@ -6,15 +6,15 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 09:36:59 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/23 12:31:06 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/25 13:54:06 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	makelist(struct s_list *B, struct s_list *A)
+void	makelist(t_list *B, t_list *A)
 {
-	struct s_list *ptr = A;
+	t_list *ptr = A;
 
 	while (ptr != NULL)
 	{

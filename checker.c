@@ -6,16 +6,16 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 10:56:28 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/23 14:16:30 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/25 14:55:47 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	checker(struct s_list *A, struct s_list *B)
+void	checker(t_list *A, t_list *B)
 {
-	struct s_list *i = A;
-	struct s_list *j;
+	t_list *i = A;
+	t_list *j;
 	int temp;
 	while (i->next != NULL)
 	{

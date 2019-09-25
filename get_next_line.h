@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 10:07:04 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/25 14:27:09 by odooms           ###   ########.fr       */
+/*   Created: 2019/06/26 14:37:39 by odooms            #+#    #+#             */
+/*   Updated: 2019/08/06 13:55:25 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	rotate_A(t_list **A)
-{
-	int temp; 
-	temp = remove_top(&(*A));
-	append(&(*A), temp);
-}
+# define BUFF_SIZE 100
+# include "libft/libft.h"
 
-void	rotate_B(t_list **B)
-{
-	int temp;
-	temp = remove_top(&(*B));
-	append(&(*B), temp);
-}
+int		get_next_line(const int fd, char **line);
 
-void	rotate_A_B(t_list **A, t_list **B)
-{
-	int temp_b;
-	int temp_a;
-	temp_a = remove_top(&(*A));
-	append(&(*A), temp_a);
-	temp_b = remove_top(&(*B));
-	append(&(*B), temp_b);
-}
+#endif

@@ -6,13 +6,13 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/28 08:25:48 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/23 13:49:58 by odooms           ###   ########.fr       */
+/*   Updated: 2019/09/25 14:34:59 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	prepend(struct s_list **A, int data)
+void	prepend(t_list **A, int data)
 {
 	struct s_list *link_a = (struct s_list*)malloc(sizeof(struct s_list));
 	link_a->data = data;
@@ -20,7 +20,7 @@ void	prepend(struct s_list **A, int data)
 	*A = link_a;
 }
 
-void	append(struct s_list** end, int num)
+void	append(t_list** end, int num)
 {
 	struct s_list* tmp = (struct s_list*)malloc(sizeof(struct s_list));
 	struct s_list *last = *end;
@@ -36,7 +36,7 @@ void	append(struct s_list** end, int num)
 	last->next = tmp;
 }
 
-int remove_bottom(struct s_list *bottom)
+int remove_bottom(t_list *bottom)
 {
 	int result;
 	struct s_list *move = bottom;
@@ -56,7 +56,7 @@ int remove_bottom(struct s_list *bottom)
 	return (result);
 }
 
-int	remove_top(struct s_list** top)
+int	remove_top(t_list** top)
 {
 	if (*top == NULL)
 		return (0);
@@ -68,20 +68,4 @@ int	remove_top(struct s_list** top)
 	free(tmp);
 	return (result);
 }
-
-/*struct s_list	reverse(struct s_list *top)
-{
-	struct s_list	*prev = NULL;
-	struct s_list	*move = top;
-	struct s_list	*next;
-	while (move	!= NULL)
-	{
-		next = move->next;
-		move->next = prev;
-		prev = move;
-		move = next;
-	}
-	top = prev;
-	return (head);
-}*/
 
