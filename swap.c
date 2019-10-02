@@ -6,35 +6,36 @@
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 11:11:29 by odooms            #+#    #+#             */
-/*   Updated: 2019/09/25 14:34:15 by odooms           ###   ########.fr       */
+/*   Updated: 2019/10/01 14:36:48 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_A(t_list **A)
+void	swap_a(t_list **a)
 {
 	int temp_1;
 	int temp_2;
-	temp_1 = remove_top(&(*A));
-	temp_2 = remove_top(&(*A));
-	prepend(&(*A), temp_1);
-	prepend(&(*A), temp_2);
+
+	temp_1 = remove_top(&(*a));
+	temp_2 = remove_top(&(*a));
+	prepend(&(*a), temp_1);
+	prepend(&(*a), temp_2);
 }
 
-void	swap_B(t_list **B)
+void	swap_b(t_list **b)
 {
 	int temp_1;
 	int temp_2;
-	temp_1 = remove_top(&(*B));
-	temp_2 = remove_top(&(*B));
-	prepend(&(*B), temp_1);
-	prepend(&(*B), temp_2);
+
+	temp_1 = remove_top(&(*b));
+	temp_2 = remove_top(&(*b));
+	prepend(&(*b), temp_1);
+	prepend(&(*b), temp_2);
 }
 
-void swap_A_B(t_list **A, t_list **B)
+void	swap_a_b(t_list **a, t_list **b)
 {
-	swap_A(&(*A));
-	swap_B(&(*B));
+	swap_a(&(*a));
+	swap_b(&(*b));
 }
-
