@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: odooms <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 08:57:32 by odooms            #+#    #+#             */
-/*   Updated: 2019/10/02 11:15:31 by odooms           ###   ########.fr       */
+/*   Created: 2019/06/26 14:37:39 by odooms            #+#    #+#             */
+/*   Updated: 2019/08/06 13:55:25 by odooms           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	main(int argc, char **argv)
-{
-	int				l;
-	int				m;
-	struct s_list	*b;
-	struct s_list	*a;
+# define BUFF_SIZE 100
+# include "libft/libft.h"
 
-	while (argc - 1 >= 1)
-	{
-		m = ft_atoi(argv[argc - 1]);
-		prepend(&a, m);
-		swap_a(&a);
-		argc--;
-	}
-	// checker(a, b);
-	makelist(b, a);
-	return (0);
-}
+int		get_next_line(const int fd, char **line);
+
+#endif
