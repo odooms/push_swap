@@ -33,6 +33,16 @@ void	makelist(t_list *b, t_list *a)
 		ft_putchar('\n');
 		ptr = ptr->next;
 	}
+		if(ptr == NULL)
+		{
+			while (b != NULL)
+			{
+				ft_putstr("  ");
+				ft_putnbr(b->data);
+				ft_putchar('\n');
+				b = b->next;
+			}
+		}
 	ft_putstr("- -\n");
 	ft_putstr("a b\n");
 }

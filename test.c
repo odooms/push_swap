@@ -23,10 +23,16 @@ int	main(int argc, char **argv)
 	{
 		m = ft_atoi(argv[argc - 1]);
 		prepend(&a, m);
-		swap_a(&a);
 		argc--;
 	}
 	// checker(a, b);
+	// swap_a(&a);
+	// remove_top(&a);
+	// remove_bottom(a);
+	push_b(&a, &b);
+	push_b(&a, &b);
+	push_b(&a, &b);
+	push_b(&a, &b);
 	makelist(b, a);
 	return (0);
 }
