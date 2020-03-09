@@ -25,14 +25,15 @@ int	main(int argc, char **argv)
 		prepend(&a, m);
 		argc--;
 	}
+	Duplicates(a);
 	// checker(a, b);
 	// swap_a(&a);
 	// remove_top(&a);
 	// remove_bottom(a);
-	push_b(&a, &b);
-	push_b(&a, &b);
-	push_b(&a, &b);
-	push_b(&a, &b);
+	// push_b(&a, &b);
+	// push_b(&a, &b);
+	// push_b(&a, &b);
+	// push_b(&a, &b);
 	makelist(b, a);
 	return (0);
 }

@@ -20,6 +20,7 @@ SRC = push_swap.c\
 	  rotate.c\
 	  reverse.c\
 	  swap.c\
+	  error_checking.c
 
 HD = -I push_swap.h
 
@@ -29,6 +30,7 @@ OBJ = push_swap.o\
 	  rotate.o\
 	  reverse.o\
 	  swap.o\
+	  error_checking.o\
 
 LIB = libft.a
 
