@@ -41,7 +41,9 @@ void	swap_a_b(t_list **a, t_list **b);
 void	reverse_a(t_list **a);
 void	reverse_b(t_list **b);
 void	reverse_a_b(t_list **a, t_list **b);
-void	Duplicates(t_list *head);
+//void	Duplicates(t_list *head);
+int	Duplicates(t_list *head);
 void	characterTest(t_list *head);
+int die(char *reason);
 
 #endif

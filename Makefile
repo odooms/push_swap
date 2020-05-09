@@ -34,6 +34,12 @@ OBJ = push_swap.o\
 
 LIB = libft.a
 
+SUBDIRS:
+	        cd libft && $(MAKE)
+
+SUBDIRS:
+	        $(MAKE) -C libft
+
 all: $(NAME)
 
 $(NAME): 

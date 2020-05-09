@@ -11,12 +11,39 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/libft.h"
 
-int	checker(t_list *a, t_list *b)
+int	die(char *reason)
+{
+	 ft_putendl(reason);
+	 return (1);
+}
+
+int     main(int argc, char **argv)
+{
+	int		m;
+	struct s_list	*b;
+	struct s_list	*a;
+
+	if(argc < 2)
+		return(die("error"));
+
+	while (argc - 1 >= 1)
+	{
+		m = ft_atoi(argv[argc - 1]);
+		prepend(&a, m);
+		argc--;
+	}
+//	Duplicates(a);
+	makelist(b, a);
+	return (0);
+}
+
+/*int	checker(t_list *a, t_list *b)
 {
 	t_list	*i;
 	t_list	*j;
-	int		temp;
+	//int		temp;
 
 	i = a;
 	while (i->next != NULL)
@@ -34,7 +61,7 @@ int	checker(t_list *a, t_list *b)
 	}
 	makelist(b, a);
 	return (1);
-}
+}*/
 
 /*int	main(int argc, char **argv)
 {

@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+
 void	makelist(t_list *b, t_list *a)
 {
 	t_list *ptr;
@@ -19,30 +20,37 @@ void	makelist(t_list *b, t_list *a)
 	ptr = a;
 	while (ptr != NULL)
 	{
-		ft_putnbr(ptr->data);
-		if (b != NULL)
+		if (ptr == NULL)
 		{
-			ft_putchar(' ');
-			ft_putnbr(b->data);
-			b = b->next;
+			ft_putstr("QQ");
+		/*	if (b == NULL)
+			{
+				ft_putstr("WW");
+			}
+			else
+			{
+				ft_putchar(' ');
+				ft_putnbr(b->data);
+				b = b->next;
+			}*/
 		}
 		else
 		{
-			ft_putstr("  ");
-		}
-		ft_putchar('\n');
-		ptr = ptr->next;
-	}
-		if(ptr == NULL)
-		{
-			while (b != NULL)
+			ft_putnbr(ptr->data);
+			/*if (b != NULL)
 			{
-				ft_putstr("  ");
+				ft_putchar(' ');
 				ft_putnbr(b->data);
-				ft_putchar('\n');
 				b = b->next;
 			}
+			else
+			{
+				ft_putstr("RR");
+			}*/
+			ft_putchar('\n');
+			ptr = ptr->next;
 		}
+	}
 	ft_putstr("- -\n");
 	ft_putstr("a b\n");
 }
